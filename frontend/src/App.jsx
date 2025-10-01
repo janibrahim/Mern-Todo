@@ -1,18 +1,18 @@
 import React from "react";
+import { Routes, Route } from "react-router-dom";
+import Hoomepage from "./pages/Homepage";
+import Createpage from "./pages/Createpage";
+import Detailpage from "./pages/Detailpage";
 
 function App() {
   return (
     <>
-      <div className="div">
-        <h1 className="text-3xl font-bold underline">Hello world!</h1>
-
-        <p className="text-lg text-gray-600">
-          This is a sample React application.
-        </p>
-
-        <button className="mt-4 px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-600">
-          Click Me
-        </button>
+      <div data-theme="forest">
+        <Routes>
+          <Route index element={<Hoomepage />} />
+          <Route path="/create" element={<Createpage />} />
+          <Route path="/note/:id" element={<Detailpage />} />
+        </Routes>
       </div>
     </>
   );
